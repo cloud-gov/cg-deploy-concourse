@@ -57,7 +57,7 @@ jobs:
     put: slack
     params:
       text: |
-        :x: FAILED to deploy Concourse on staging
+        :x: FAILED to deploy Concourse on staging in ((meta.env))
         <$ATC_EXTERNAL_URL/teams/$BUILD_TEAM_NAME/pipelines/$BUILD_PIPELINE_NAME/jobs/$BUILD_JOB_NAME/builds/$BUILD_NAME|View build details>
       channel: ((slack-channel))
       username: ((slack-username))
@@ -66,7 +66,7 @@ jobs:
     put: slack
     params:
       text: |
-        :white_check_mark: Successfully deployed Concourse on staging
+        :white_check_mark: Successfully deployed Concourse on staging in ((meta.env))
         <$ATC_EXTERNAL_URL/teams/$BUILD_TEAM_NAME/pipelines/$BUILD_PIPELINE_NAME/jobs/$BUILD_JOB_NAME/builds/$BUILD_NAME|View build details>
       channel: ((slack-channel))
       username: ((slack-username))
@@ -106,7 +106,7 @@ jobs:
     put: slack
     params:
       text: |
-        :x: FAILED to deploy Concourse on production
+        :x: FAILED to deploy Concourse on production in ((meta.env))
         <$ATC_EXTERNAL_URL/teams/$BUILD_TEAM_NAME/pipelines/$BUILD_PIPELINE_NAME/jobs/$BUILD_JOB_NAME/builds/$BUILD_NAME|View build details>
       channel: ((slack-channel))
       username: ((slack-username))
@@ -115,7 +115,7 @@ jobs:
     put: slack
     params:
       text: |
-        :white_check_mark: Successfully deployed Concourse on production
+        :white_check_mark: Successfully deployed Concourse on production in ((meta.env))
         <$ATC_EXTERNAL_URL/teams/$BUILD_TEAM_NAME/pipelines/$BUILD_PIPELINE_NAME/jobs/$BUILD_JOB_NAME/builds/$BUILD_NAME|View build details>
       channel: ((slack-channel))
       username: ((slack-username))
