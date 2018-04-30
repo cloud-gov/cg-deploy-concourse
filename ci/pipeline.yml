@@ -18,6 +18,8 @@ jobs:
     - get: garden-runc-release
       trigger: false
   - task: concourse-manifest
+    params:
+      EXTERNAL_URL: ((concourse-staging-external_url))
     config: &manifest-config
       platform: linux
       image_resource:
@@ -94,6 +96,8 @@ jobs:
       trigger: false
       passed: [deploy-concourse-staging]
   - task: concourse-manifest
+    params:
+      EXTERNAL_URL: ((concourse-prod-external_url))
     config:
       <<: *manifest-config
       run:

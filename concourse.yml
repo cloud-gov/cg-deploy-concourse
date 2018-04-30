@@ -23,7 +23,7 @@ instance_groups:
         bind_port: 9110
       web_bind_port: 8080
       intercept_idle_timeout: 10m
-      external_url: (( param "specify external url" ))
+      external_url: (( grab $EXTERNAL_URL ))
   - name: tsa
     release: concourse
 
