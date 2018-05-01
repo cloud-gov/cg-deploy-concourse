@@ -167,7 +167,6 @@ resources:
   type: bosh-io-stemcell
   source:
     name: bosh-aws-xen-hvm-ubuntu-trusty-go_agent
-    version_family: 3468.latest
 
 - name: concourse-release
   type: bosh-io-release

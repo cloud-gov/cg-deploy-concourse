@@ -22,6 +22,7 @@ instance_groups:
         bind_ip: 0.0.0.0
         bind_port: 9110
       web_bind_port: 8080
+      cookie_secure: true
       intercept_idle_timeout: 10m
       external_url: (( grab $EXTERNAL_URL ))
   - name: tsa
@@ -31,7 +32,7 @@ instance_groups:
   instances: 1
   stemcell: default
   jobs:
-  - name: groundcrew
+  - name: worker
     release: concourse
     properties:
       additional_resource_types:
@@ -46,6 +47,8 @@ instance_groups:
   - name: baggageclaim
     release: concourse
     provides: {baggageclaim: {as: default-baggageclaim}}
+    properties:
+      driver: overlay
   - name: garden
     release: garden-runc
     properties:

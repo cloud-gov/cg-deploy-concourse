@@ -3,11 +3,10 @@ instance_groups:
   inject: (( inject instance_groups.worker ))
   vm_extensions: nil
   jobs:
-  - name: groundcrew
+  - name: worker
     properties:
       team: main
-      tags:
-      - iaas
+      tags: [iaas]
     consumes: {baggageclaim: {from: iaas-baggageclaim}}
   - name: baggageclaim
     provides: {baggageclaim: {as: iaas-baggageclaim}}
