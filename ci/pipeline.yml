@@ -20,6 +20,8 @@ jobs:
   - task: concourse-manifest
     params:
       EXTERNAL_URL: ((concourse-staging-external_url))
+      BASIC_AUTH_USERNAME: ((basic-auth-username-staging))
+      BASIC_AUTH_PASSWORD: ((basic-auth-password-staging))
     config: &manifest-config
       platform: linux
       image_resource:
@@ -98,6 +100,8 @@ jobs:
   - task: concourse-manifest
     params:
       EXTERNAL_URL: ((concourse-prod-external_url))
+      BASIC_AUTH_USERNAME: ((basic-auth-username-staging))
+      BASIC_AUTH_PASSWORD: ((basic-auth-password-staging))
     config:
       <<: *manifest-config
       run:
