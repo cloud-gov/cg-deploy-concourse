@@ -38,7 +38,6 @@ jobs:
       - concourse-config/operations/bosh-dns-aliases.yml
       - concourse-config/operations/enable-across-step.yml
       - concourse-config/operations/container-placement.yml
-      - concourse-config/operations/use-jammy.yml
       vars_files:
       - concourse-deployment/versions.yml
       - concourse-config/variables/staging.yml
@@ -183,7 +182,6 @@ jobs:
       - concourse-config/operations/bosh-dns-aliases.yml
       - concourse-config/operations/enable-across-step.yml
       - concourse-config/operations/container-placement.yml
-      - concourse-config/operations/use-jammy.yml
       vars_files:
       - concourse-deployment/versions.yml
       - concourse-config/variables/production.yml
