@@ -8,6 +8,8 @@
     stemcell: jammy
     vm_type: ((iaas_worker_vm_type))
     jobs:
+    - release: bpm
+      name: bpm
     - release: concourse
       name: worker
       properties:
@@ -20,3 +22,10 @@
 - type: replace
   path: /instance_groups/name=iaas-worker/jobs/name=worker/properties/tags?
   value: [iaas]
+
+
+- type: replace
+  path: /instance_groups/name=worker/jobs/-
+  value:
+    name: bpm
+    release: bpm
